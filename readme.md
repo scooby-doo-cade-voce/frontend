@@ -62,3 +62,6 @@ npm install husky --save-dev
 ```
 
 Dessa forma, antes de cada commit, o Husky irá executar os scripts "lint" e "format", que garantem que o código esteja formatado e sem erros.
+
+
+### Testando o kusky
