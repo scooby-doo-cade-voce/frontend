@@ -6,7 +6,6 @@ Este projeto tem como objetivo desenvolver uma aplicação web que permita que t
 
 - Node.js
 - React
-- MongoDB
 
 ## Como rodar o projeto
 
