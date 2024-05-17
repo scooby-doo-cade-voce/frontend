@@ -18,19 +18,19 @@ const footerMenus = [
 
 export function AppFooter() {
   return (
-    <footer className="border-t pb-10 pt-24">
+    <footer className="border-t pb-5 pt-12 lg:pb-10 lg:pt-24">
       <div className="container">
-        <div className="mb-32 grid gap-12 lg:grid-cols-3">
+        <div className="mb-20 grid gap-6 lg:mb-32 lg:grid-cols-3">
           <div>
-            <Logo className="text-primary" />
+            <Logo className="h-[26px] w-[111px] text-primary lg:h-[52px] lg:w-[222px]" />
 
-            <p className="mt-5 text-lg text-[#182F43]">
+            <p className="mt-5 text-[#182F43] lg:text-lg">
               Juntos, podemos fazer a diferença. Participe e ajude a reunir os
               pets às suas famílias.
             </p>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-3 lg:space-y-5">
             <h4 className="text-lg font-semibold">Links Úteis:</h4>
 
             <ul className="space-y-3">

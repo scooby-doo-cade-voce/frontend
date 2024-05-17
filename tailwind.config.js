@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1.5rem',
       screens: {
         '2xl': '1400px',
       },
@@ -16,6 +16,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', ...fontFamily.sans],
+        poetsenone: ['Poetsen One', ...fontFamily.sans],
       },
       colors: {
         black: '#1E1E1E',
