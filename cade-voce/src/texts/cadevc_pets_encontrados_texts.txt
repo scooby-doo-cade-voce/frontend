@@ -1,6 +1,16 @@
-Cadastre um pet
+Encontre Seu Pet Perdido: Animais Resgatados
 
-Registre e Aumente as Possibilidades de Encontrar seu Amigo
+Veja aqui alguns dos animais que foram encontrados e estão aguardando para serem reunidos com suas famílias.
+
+
+Galeria de pets encontrados
+
+
+
+
+Não encontrou seu pet?Cadastre Seu Pet e Amplie as Chances de Reencontro
+
+Se seu pet ainda não apareceu em nossa galeria, cadastre-o em nosso sistema com detalhes como foto, tamanho, cor, raça e nome. Isso aumentará as chances de que ele seja reconhecido e possamos notificá-lo assim que ele for encontrado. Mantenha a esperança; estamos aqui para ajudar a reunir sua família!
 
 
 
