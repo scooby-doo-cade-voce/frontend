@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 270 71% 47%;
+    --primary-50: 268 63% 95%;
+    --primary-100: 269 64% 84%;
+    --primary-200: 269 63% 76%;
+    --primary-300: 269 63% 65%;
+    --primary-400: 270 63% 58%;
+    --primary-500: var(--primary);
+    --primary-600: 269 71% 43%;
+    --primary-700: 269 71% 34%;
+    --primary-800: 269 71% 26%;
+    --primary-900: 270 70% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 46 81% 54%;
+    --secondary-50: 46 100% 96%;
+    --secondary-100: 46 100% 87%;
+    --secondary-200: 46 100% 81%;
+    --secondary-300: 46 100% 72%;
+    --secondary-400: 46 100% 67%;
+    --secondary-500: 46 100% 59%;
+    --secondary-600: var(--secondary);
+    --secondary-700: 46 70% 42%;
+    --secondary-800: 46 70% 32%;
+    --secondary-900: 46 70% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* neutral */
+
+    --emerald-50: 159 50% 95%;
+    --emerald-100: 160 49% 82%;
+    --emerald-200: 159 49% 74%;
+    --emerald-300: 159 49% 62%;
+    --emerald-400: 158 50% 55%;
+    --emerald-500: 158 64% 44%;
+    --emerald-600: 158 64% 40%;
+    --emerald-700: 159 64% 31%;
+    --emerald-800: 158 64% 24%;
+    --emerald-900: 159 63% 18%;
+
+    --orange-50: 30 100% 96%;
+    --orange-100: 29 96% 89%;
+    --orange-200: 29 95% 84%;
+    --orange-300: 29 95% 76%;
+    --orange-400: 29 96% 72%;
+    --orange-500: 29 96% 65%;
+    --orange-600: 29 74% 59%;
+    --orange-700: 29 53% 46%;
+    --orange-800: 29 52% 35%;
+    --orange-900: 29 52% 27%;
+
+    --rose-50: 348 71% 96%;
+    --rose-100: 350 75% 87%;
+    --rose-200: 350 75% 81%;
+    --rose-300: 350 75% 73%;
+    --rose-400: 350 75% 68%;
+    --rose-500: 350 75% 60%;
+    --rose-600: 350 60% 54%;
+    --rose-700: 350 51% 42%;
+    --rose-800: 349 51% 33%;
+    --rose-900: 351 50% 25%;
+
+    --neutral-50: 200 8% 93%;
+    --neutral-100: 204 9% 78%;
+    --neutral-200: 208 9% 67%;
+    --neutral-300: 206 9% 52%;
+    --neutral-400: 208 12% 42%;
+    --neutral-500: 206 23% 28%;
+    --neutral-600: 207 22% 25%;
+    --neutral-700: 206 23% 20%;
+    --neutral-800: 207 23% 15%;
+    --neutral-900: 206 23% 12%;
+
+    --muted: 264 100% 99%;
+    --muted-foreground: 0 0% 12%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@keyframes shimmer {
+  to {
+     background-position-x: 0%
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .bg-shimmer {
+    background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+    background-size: 300%;
+    background-position-x: 100%;
+    animation: shimmer 1s infinite linear;
+  }
+}

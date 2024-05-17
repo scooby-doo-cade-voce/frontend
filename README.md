@@ -1,67 +1,30 @@
-README - Projeto "Cade Voce?"
+# React + TypeScript + Vite
 
-Este projeto tem como objetivo desenvolver uma aplicação web que permita que tutores de animais de estimação encontrem seus pets perdidos com mais facilidade. A ideia é que o tutor possa enviar uma foto e/ou descrição do animal perdido e a aplicação retorne informações sobre animais encontrados em abrigos cadastrados.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Tecnologias utilizadas
+Currently, two official plugins are available:
 
-- Node.js
-- React
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Como rodar o projeto
+## Expanding the ESLint configuration
 
-Para rodar o projeto, é necessário ter o Node.js e o MongoDB instalados na máquina.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-1. Clone o repositório em sua máquina:
+- Configure the top-level `parserOptions` property like this:
 
-```
-git clone https://github.com/scooby-doo-cade-voce/frontend.git
-```
-
-2. Acesse a pasta do projeto:
-
-```
-cd cade-voce
-```
-
-3. Instale as dependências do projeto:
-
-```
-npm install
-```
-
-4. Inicie o servidor:
-
-```
-npm start
-```
-
-5. Acesse a aplicação em seu navegador, através do endereço:
-
-```
-http://localhost:3000
-```
-
-## Utilização do Husky
-
-O Husky é uma ferramenta que permite a execução de scripts antes de cada commit, garantindo que o código esteja sempre formatado e sem erros. Para utilizar o Husky neste projeto, basta seguir os seguintes passos:
-
-1. Instale o Husky como dependência de desenvolvimento:
-
-```
-npm install husky --save-dev
-```
-
-2. Adicione o seguinte trecho de código no arquivo package.json:
-
-```
-"husky": {
-  "hooks": {
-    "pre-commit": "npm run lint && npm run format"
-  }
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
 }
 ```
 
-Dessa forma, antes de cada commit, o Husky irá executar os scripts "lint" e "format", que garantem que o código esteja formatado e sem erros.
-
-
-### Testando o kusky
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
