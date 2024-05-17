@@ -56,7 +56,7 @@ export function GiveAPaw() {
   return (
     <section className="py-5 lg:py-12">
       <div className="container">
-        <h2 className="font-poetsenone mb-6 flex flex-col-reverse items-center justify-center gap-3 text-center text-4xl -tracking-[0.0625rem] text-primary lg:flex-row lg:text-left lg:text-6xl">
+        <h2 className="mb-6 flex flex-col-reverse items-center justify-center gap-3 text-center font-poetsenone text-4xl -tracking-[0.0625rem] text-primary lg:flex-row lg:text-left lg:text-6xl">
           Dê uma patinha!
           <Paw className="-rotate-6 text-secondary-500" />
         </h2>
