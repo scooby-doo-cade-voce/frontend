@@ -1,4 +1,4 @@
-import logo from './scoobydoo.svg';
+import logo from './assets/scoobydoo.svg';
 import './App.css';
 
 function App() {
