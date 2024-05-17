@@ -1,14 +1,14 @@
 export const menusItems = [
   {
-    href: '#sobre-nos',
+    href: '/#sobre-nos',
     label: 'Sobre nós',
   },
   {
-    href: '#como-usar',
+    href: '/#como-usar',
     label: 'Como usar?',
   },
   {
-    href: '#pets-encontrados',
+    href: '/#pets-encontrados',
     label: 'Pets encontrados',
   },
 ]
