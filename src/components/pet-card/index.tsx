@@ -31,7 +31,7 @@ export function PetCard() {
 
         <Dialog>
           <DialogTrigger asChild>
-            <button className="hover:text-primary-600 text-sm font-semibold text-primary transition-colors duration-200 ease-in-out">
+            <button className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600">
               Entrar em contato
             </button>
           </DialogTrigger>
