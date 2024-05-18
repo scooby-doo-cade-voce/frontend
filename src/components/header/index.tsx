@@ -19,6 +19,9 @@ export function AppHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+  const isSubscriptionPage =
+    location.pathname === '/cadastro-pet-concluido' ||
+    location.pathname === '/cadastrar-pet'
 
   return (
     <Collapsible.Root asChild open={isOpen} onOpenChange={setIsOpen}>
@@ -50,14 +53,19 @@ export function AppHeader() {
 
               {!isHomePage && <Link to="/">Voltar à home</Link>}
 
-              <Button
-                asChild
-                className="h-auto items-center gap-2 rounded-lg px-4 py-3 text-base leading-none"
-              >
-                <Link to="/cadastrar-pet">
-                  Cadastrar um pet{' '}
-                  <ChevronRight className="size-4" strokeWidth={3} />
-                </Link>
+              <Button className="h-auto items-center gap-2 rounded-lg px-4 py-3 text-base leading-none">
+                {isSubscriptionPage && (
+                  <Link to="/pets" className="flex items-center gap-1">
+                    <span> Achar um pet</span>
+                    <ChevronRight className="size-4" strokeWidth={3} />
+                  </Link>
+                )}
+                {isHomePage && (
+                  <Link to="/cadastrar-pet" className="flex items-center gap-1">
+                    <span>Cadastrar um pet</span>
+                    <ChevronRight className="size-4" strokeWidth={3} />
+                  </Link>
+                )}
               </Button>
             </nav>
           </Collapsible.Content>
