@@ -111,6 +111,11 @@
   * {
     @apply border-border;
   }
+
+  html {
+    @apply scroll-smooth antialiased scroll-pt-20 lg:scroll-pt-[106px]
+  }
+
   body {
     @apply bg-background text-foreground;
   }
