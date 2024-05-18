@@ -63,12 +63,14 @@
     --orange-800: 29 52% 35%;
     --orange-900: 29 52% 27%;
 
+    --destructive: 350 75% 60%;
+    --destructive-foreground: 0 0% 98%;
     --rose-50: 348 71% 96%;
     --rose-100: 350 75% 87%;
     --rose-200: 350 75% 81%;
     --rose-300: 350 75% 73%;
     --rose-400: 350 75% 68%;
-    --rose-500: 350 75% 60%;
+    --rose-500: var(--destructive);
     --rose-600: 350 60% 54%;
     --rose-700: 350 51% 42%;
     --rose-800: 349 51% 33%;
@@ -90,9 +92,6 @@
 
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
