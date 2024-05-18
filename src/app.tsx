@@ -1,7 +1,9 @@
+import { QueryClientProvider } from '@tanstack/react-query'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from 'react-router-dom'
 import { Chatbot } from './components/chatbot'
 import { Toaster } from './components/ui/sonner'
+import { queryClient } from './lib/react-query'
 import { router } from './routes'
 
 export function App() {
@@ -9,10 +11,12 @@ export function App() {
     <HelmetProvider>
       <Helmet titleTemplate="%s | Scooby Doo, Cadê Você?" />
 
-      <RouterProvider router={router} />
-      <Toaster richColors />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <Toaster richColors />
 
-      <Chatbot />
+        <Chatbot />
+      </QueryClientProvider>
     </HelmetProvider>
   )
 }
