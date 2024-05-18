@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --fix",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "dependencies": {
     "@radix-ui/react-collapsible": "^1.0.3",
