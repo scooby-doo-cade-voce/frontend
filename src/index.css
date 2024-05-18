@@ -113,7 +113,7 @@
   }
 
   html {
-    @apply scroll-smooth antialiased
+    @apply scroll-smooth antialiased scroll-pt-20 lg:scroll-pt-[106px]
   }
 
   body {
