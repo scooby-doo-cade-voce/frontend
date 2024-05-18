@@ -3,7 +3,11 @@ import { createBrowserRouter } from 'react-router-dom'
 import { NotFound } from './pages/404'
 import { AppLayout } from './pages/_layouts/app'
 import { HomePage } from './pages/app/home'
+
 import { PetsFound } from './pages/app/petsfound'
+
+import { RegisterPet } from './pages/app/register-pet'
+
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +21,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/cadastrar-pet',
-        element: <HomePage />,
+        element: <RegisterPet />,
       },
       {
         path: '/pets-encontrados',
