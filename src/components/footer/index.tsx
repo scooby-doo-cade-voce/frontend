@@ -1,5 +1,4 @@
 import { menusItems } from '@/utils/menu'
-import { Link } from 'react-router-dom'
 import { Logo } from '../logo'
 
 const currentYear = new Date().getFullYear()
@@ -36,12 +35,12 @@ export function AppFooter() {
             <ul className="space-y-3">
               {footerMenus.map((menu) => (
                 <li key={menu.href.concat('footer-menu')}>
-                  <Link
-                    to={menu.href}
+                  <a
+                    href={menu.href}
                     className="transition-colors duration-200 ease-in-out hover:text-primary"
                   >
                     {menu.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

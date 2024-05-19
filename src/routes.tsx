@@ -6,6 +6,7 @@ import { HomePage } from './pages/app/home'
 
 import { PetsFound } from './pages/app/petsfound'
 
+import { PetSubscriptionDonePage } from './pages/app/cadastro-concluido'
 import { RegisterPet } from './pages/app/register-pet'
 
 
@@ -26,6 +27,8 @@ export const router = createBrowserRouter([
       {
         path: '/pets-encontrados',
         element: <PetsFound />,
+        path: '/cadastro-pet-concluido',
+        element: <PetSubscriptionDonePage />,
       },
     ],
   },
