@@ -57,7 +57,7 @@ export function Hero() {
               asChild
               className="h-auto w-full items-center gap-2 rounded-lg border border-primary px-4 py-3 text-base leading-none lg:w-auto"
             >
-              <Link to="/pets">
+              <Link to="/pets-encontrados">
                 Achar meu pet{' '}
                 <ChevronRight className="size-4" strokeWidth={3} />
               </Link>
