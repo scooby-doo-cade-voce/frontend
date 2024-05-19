@@ -4,10 +4,10 @@ import { NotFound } from './pages/404'
 import { AppLayout } from './pages/_layouts/app'
 import { HomePage } from './pages/app/home'
 
-import { PetsFound } from './pages/app/petsfound'
+import { PetsFound } from './pages/app/pets-found'
 
-import { PetSubscriptionDonePage } from './pages/app/cadastro-concluido'
 import { RegisterPet } from './pages/app/register-pet'
+import { PetSubscriptionDonePage } from './pages/app/register-pet-success'
 
 export const router = createBrowserRouter([
   {
