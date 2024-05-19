@@ -36,7 +36,7 @@ export function Pets() {
           asChild
           className="mx-auto mt-6 flex h-auto w-fit items-center gap-2 rounded-lg px-4 py-3 text-base leading-none"
         >
-          <Link to="/pets">
+          <Link to="/pets-encontrados">
             Ver lista completa{' '}
             <ChevronRight className="size-4" strokeWidth={3} />
           </Link>
