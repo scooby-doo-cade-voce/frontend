@@ -4,6 +4,11 @@ import { NotFound } from './pages/404'
 import { AppLayout } from './pages/_layouts/app'
 import { HomePage } from './pages/app/home'
 
+import { PetsFound } from './pages/app/pets-found'
+
+import { RegisterPet } from './pages/app/register-pet'
+import { PetSubscriptionDonePage } from './pages/app/register-pet-success'
+
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -16,7 +21,15 @@ export const router = createBrowserRouter([
       },
       {
         path: '/cadastrar-pet',
-        element: <HomePage />,
+        element: <RegisterPet />,
+      },
+      {
+        path: '/pets-encontrados',
+        element: <PetsFound />,
+      },
+      {
+        path: '/cadastro-pet-concluido',
+        element: <PetSubscriptionDonePage />,
       },
     ],
   },

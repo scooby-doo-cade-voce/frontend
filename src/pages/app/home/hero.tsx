@@ -39,9 +39,8 @@ export function Hero() {
               compilados a partir de informações fornecidas por instituições e
               ONGs dedicadas ao bem-estar animal. Com recursos de busca avançada
               e filtros específicos, tornamos mais fácil para os donos{' '}
-              <strong className="font-semibold">encontrar</strong>
-              seus animais perdidos e para aqueles que encontraram animais
-              perdidos{' '}
+              <strong className="font-semibold">encontrar</strong> seus animais
+              perdidos e para aqueles que encontraram animais perdidos{' '}
               <strong className="font-semibold">localizar seus donos.</strong>
             </p>
 
@@ -58,7 +57,7 @@ export function Hero() {
               asChild
               className="h-auto w-full items-center gap-2 rounded-lg border border-primary px-4 py-3 text-base leading-none lg:w-auto"
             >
-              <Link to="/pets">
+              <Link to="/pets-encontrados">
                 Achar meu pet{' '}
                 <ChevronRight className="size-4" strokeWidth={3} />
               </Link>
