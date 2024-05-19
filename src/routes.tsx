@@ -26,6 +26,8 @@ export const router = createBrowserRouter([
       {
         path: '/pets-encontrados',
         element: <PetsFound />,
+      },
+      {
         path: '/cadastro-pet-concluido',
         element: <PetSubscriptionDonePage />,
       },
