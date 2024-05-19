@@ -8,7 +8,6 @@ import { PetsFound } from './pages/app/petsfound'
 
 import { RegisterPet } from './pages/app/register-pet'
 
-
 export const router = createBrowserRouter([
   {
     path: '/',
