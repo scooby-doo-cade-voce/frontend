@@ -26,19 +26,14 @@ export default function PetsMobile() {
     <div>
       <div ref={sliderRef} className="keen-slider !overflow-visible">
         <div className="keen-slider__slide shrink-0 shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
-          <PetCard />
-        </div>
-        <div className="keen-slider__slide shrink-0 shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
-          <PetCard />
-        </div>
-        <div className="keen-slider__slide shrink-0 shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
-          <PetCard />
-        </div>
-        <div className="keen-slider__slide shrink-0 shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
-          <PetCard />
-        </div>
-        <div className="keen-slider__slide shrink-0 shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
-          <PetCard />
+          <PetCard
+            imageSrc="https://placedog.net/400?random"
+            title="Vira lata marrom"
+            description="Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás."
+            species="Cachorro"
+            breed="Vira lata"
+            color="Marrom"
+          />
         </div>
       </div>
 
