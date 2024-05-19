@@ -1,14 +1,11 @@
 import registerAPetImg from '@/assets/imgs/register-a-pet.webp'
 import { ImageWithLoader } from '@/components/ui/image-with-loader'
-import { useScrollTop } from '@/hooks/useScrollTop'
 import { lazy, Suspense } from 'react'
 import { Helmet } from 'react-helmet-async'
 
 const RegisterPetForm = lazy(() => import('./register-form'))
 
 export function RegisterPet() {
-  useScrollTop()
-
   return (
     <div className="container flex flex-col gap-6 py-16 lg:flex-row lg:items-center lg:gap-24 lg:py-32">
       <Helmet title="Cadastrar Pet" />

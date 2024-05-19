@@ -1,13 +1,10 @@
 import testImg from '@/assets/imgs/girt-sitting-next-to-dog.webp'
 import { Button } from '@/components/ui/button'
 import { ImageWithLoader } from '@/components/ui/image-with-loader'
-import { useScrollTop } from '@/hooks/useScrollTop'
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export const PetSubscriptionDonePage = () => {
-  useScrollTop()
-
   return (
     <div className="container flex flex-col-reverse justify-between pb-7 pt-4 lg:flex-row lg:px-20 lg:pb-36 lg:pt-24">
       <div className="w-full space-y-9 lg:w-1/2">
