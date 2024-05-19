@@ -36,7 +36,7 @@ const ACCEPTED_IMAGE_TYPES = [
   'image/png',
   'image/webp',
 ]
-const IMAGE_UPLOAD_ENABLED = true
+const IMAGE_UPLOAD_ENABLED = false
 
 const schema = z.object({
   name: z.string(),
