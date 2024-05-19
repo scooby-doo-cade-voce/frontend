@@ -16,9 +16,8 @@ export function HowItWorks() {
               compilados a partir de informações fornecidas por instituições e
               ONGs dedicadas ao bem-estar animal. Com recursos de busca avançada
               e filtros específicos, tornamos mais fácil para os donos{' '}
-              <strong className="font-semibold">encontrar</strong>
-              seus animais perdidos e para aqueles que encontraram animais
-              perdidos{' '}
+              <strong className="font-semibold">encontrar</strong> seus animais
+              perdidos e para aqueles que encontraram animais perdidos{' '}
               <strong className="font-semibold">localizar seus donos.</strong>
             </p>
 

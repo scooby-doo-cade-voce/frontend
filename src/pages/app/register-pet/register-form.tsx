@@ -39,7 +39,7 @@ const ACCEPTED_IMAGE_TYPES = [
 const IMAGE_UPLOAD_ENABLED = false
 
 const schema = z.object({
-  name: z.string().min(1, 'Nome é obrigatório'),
+  name: z.string(),
   description: z.string().min(5, 'Descrição é obrigatória'),
   age: z
     .number()
@@ -207,7 +207,7 @@ export default function RegisterPetForm() {
                   ) : (
                     <FormDescription>
                       Digite a idade do seu pet em anos, deixe 1 caso tenha
-                      menos de 1 ano.
+                      menos de 1 ano ou não saiba a idade.
                     </FormDescription>
                   )}
                 </FormItem>

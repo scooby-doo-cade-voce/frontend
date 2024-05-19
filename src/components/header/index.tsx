@@ -19,6 +19,9 @@ export function AppHeader() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+  const isSubscriptionPage =
+    location.pathname === '/cadastro-pet-concluido' ||
+    location.pathname === '/cadastrar-pet'
 
   return (
     <Collapsible.Root asChild open={isOpen} onOpenChange={setIsOpen}>
@@ -40,24 +43,29 @@ export function AppHeader() {
             <nav className="radix-state-closed:animate-slideUpAndFade radix-state-open:animate-slideDownAndFade dark:bg-neutral-1000 fixed left-0 right-0 top-[90px] z-50 flex flex-col gap-4 bg-white p-4 radix-state-closed:hidden radix-state-open:bottom-0 lg:relative lg:top-0 lg:flex-row lg:items-center lg:justify-evenly lg:gap-6 lg:bg-transparent lg:p-0 lg:radix-state-closed:flex">
               {isHomePage &&
                 menus.map((menu) => (
-                  <Link
+                  <a
                     key={menu.href.concat('header-menu-item')}
-                    to={menu.href}
+                    href={menu.href}
                   >
                     {menu.label}
-                  </Link>
+                  </a>
                 ))}
 
               {!isHomePage && <Link to="/">Voltar à home</Link>}
 
-              <Button
-                asChild
-                className="h-auto items-center gap-2 rounded-lg px-4 py-3 text-base leading-none"
-              >
-                <Link to="/cadastrar-pet">
-                  Cadastrar um pet{' '}
-                  <ChevronRight className="size-4" strokeWidth={3} />
-                </Link>
+              <Button className="h-auto items-center gap-2 rounded-lg px-4 py-3 text-base leading-none">
+                {isSubscriptionPage && (
+                  <Link to="/pets" className="flex items-center gap-1">
+                    <span> Achar um pet</span>
+                    <ChevronRight className="size-4" strokeWidth={3} />
+                  </Link>
+                )}
+                {isHomePage && (
+                  <Link to="/cadastrar-pet" className="flex items-center gap-1">
+                    <span>Cadastrar um pet</span>
+                    <ChevronRight className="size-4" strokeWidth={3} />
+                  </Link>
+                )}
               </Button>
             </nav>
           </Collapsible.Content>
