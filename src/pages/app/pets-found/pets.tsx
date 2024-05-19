@@ -79,14 +79,49 @@ export function Pets() {
         </div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-4">
-          <PetCard />
-          <PetCard />
-          <PetCard />
-          <PetCard />
-          <PetCard />
-          <PetCard />
-          <PetCard />
-          <PetCard />
+          {/* Todas as chamadas da tag PetCard precisa desses parametros
+        <PetCard
+          imageSrc="https://placedog.net/400?random"
+          title="Vira lata marrom"
+          description="Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás."
+          species="Cachorro"
+          breed="Vira lata"
+          color="Marrom"
+        />
+        */}
+
+          <PetCard
+            imageSrc="https://placedog.net/400?random"
+            title="Vira lata marrom"
+            description="Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás."
+            species="Cachorro"
+            breed="Vira lata"
+            color="Marrom"
+          />
+          <PetCard
+            imageSrc="https://placedog.net/400?random"
+            title="Vira lata marrom"
+            description="Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás."
+            species="Cachorro"
+            breed="Vira lata"
+            color="Marrom"
+          />
+          <PetCard
+            imageSrc="https://placedog.net/400?random"
+            title="Vira lata marrom"
+            description="Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás."
+            species="Cachorro"
+            breed="Vira lata"
+            color="Marrom"
+          />
+          <PetCard
+            imageSrc="https://placedog.net/400?random"
+            title="Vira lata marrom"
+            description="Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás."
+            species="Cachorro"
+            breed="Vira lata"
+            color="Marrom"
+          />
         </div>
 
         <div className="mt-8 flex justify-center">
