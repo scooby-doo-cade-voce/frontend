@@ -163,9 +163,9 @@ export function Pets() {
           aguardando para serem reunidos com suas famílias.
         </h3>
         <div className="mb-8 grid place-content-center gap-1">
-          <img src={PurpleArrow} alt="purplearrow" height={110} width={110} />
+          <img src={PurpleArrow} alt="purplearrow" height={157} width={157} />
         </div>
-        <h2 className="mb-16 flex items-center justify-center gap-3 text-3xl font-semibold text-black">
+        <h2 className="mb-16  flex items-center justify-center gap-3 text-3xl font-semibold text-black">
           Galeria de pets encontrados <Paw className="size-7 rotate-45" />
         </h2>
         <div className="flex justify-center space-x-4">
