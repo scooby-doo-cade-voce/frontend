@@ -3,7 +3,6 @@ import {
   DialogContent,
   DialogDescription,
   DialogTitle,
-  DialogTrigger,
 } from '@radix-ui/react-dialog'
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -40,11 +39,16 @@ export function PetCard({
         </strong>
         <p className="mb-6 text-sm tracking-tighter">{description}</p>
         <Dialog>
-          <DialogTrigger asChild>
-            <button className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600">
-              Entrar em contato
-            </button>
-          </DialogTrigger>
+          <button
+            className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600"
+            type="button"
+            onClick={(e) => {
+              e.preventDefault()
+              window.location.href = 'https://www.whatsapp.com/'
+            }}
+          >
+            Entrar em contato
+          </button>
           <DialogContent className="flex max-h-[90vh] max-w-fit flex-col items-center p-0 lg:flex-row lg:gap-8">
             <div className="w-[420px] lg:h-[430px]">
               <img
