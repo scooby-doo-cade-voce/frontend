@@ -1,9 +1,87 @@
-import React, { useRef, useState, useEffect } from 'react'
 import { Paw } from '@/components/paw'
 import { PetCard } from '@/components/pet-card'
 import { Button } from '@/components/ui/button'
-import PurpleArrow from '../../../assets/imgs/purplearrow.webp'
 import { ChevronRight } from 'lucide-react'
+import { useEffect, useRef, useState, type ElementRef } from 'react'
+import PurpleArrow from '../../../assets/imgs/purplearrow.webp'
+
+type Animal = {
+  id: number
+  name: string
+  description: string
+  species: string
+  breed: string
+  color: string
+  image: string
+}
+
+// dados fakes simulando o que virá da requisição
+const animais: Animal[] = [
+  {
+    id: 1,
+    name: 'Vira lata marrom',
+    description:
+      'Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás.',
+    species: 'Cachorro',
+    breed: 'Vira lata',
+    color: 'Marrom',
+    image: 'https://placedog.net/400?random1',
+  },
+  {
+    id: 2,
+    name: 'Golden Retriever',
+    description: 'Golden Retriever com pelo dourado e muito amigável.',
+    species: 'Cachorro',
+    breed: 'Golden Retriever',
+    color: 'Dourado',
+    image: 'https://placedog.net/400?random2',
+  },
+  {
+    id: 3,
+    name: 'Kitty',
+    description: 'Labrador preto com uma personalidade muito brincalhona.',
+    species: 'Gato',
+    breed: 'Labrador',
+    color: 'Preto',
+    image: 'https://placedog.net/400?random3',
+  },
+  {
+    id: 4,
+    name: 'Vacalo',
+    description: 'Poodle branco com pelos encaracolados e muito elegante.',
+    species: 'Cavalo',
+    breed: 'Poodle',
+    color: 'Branco',
+    image: 'https://placedog.net/400?random4',
+  },
+  {
+    id: 5,
+    name: 'Periquito',
+    description: 'Bulldog com uma aparência robusta e muito carinhoso.',
+    species: 'Ave',
+    breed: 'Bulldog',
+    color: 'Branco',
+    image: 'https://placedog.net/400?random5',
+  },
+  {
+    id: 6,
+    name: '6',
+    description: 'Bulldog com uma aparência robusta e muito carinhoso.',
+    species: 'Cachorro',
+    breed: 'Bulldog',
+    color: 'Branco',
+    image: 'https://placedog.net/400?random5',
+  },
+  {
+    id: 7,
+    name: '7',
+    description: 'Poodle branco com pelos encaracolados e muito elegante.',
+    species: 'Cachorro',
+    breed: 'Poodle',
+    color: 'Branco',
+    image: 'https://placedog.net/400?random4',
+  },
+]
 
 export function Pets() {
   const [filters, setFilters] = useState({
@@ -13,15 +91,15 @@ export function Pets() {
     porte: '',
   })
 
-  const [resultados, setResultados] = useState([])
+  const [resultados, setResultados] = useState<Animal[]>([])
 
-  const selectRefSpecies = useRef(null)
-  const selectRefColor = useRef(null)
-  const selectRefBreed = useRef(null)
-  const selectRefPorte = useRef(null)
+  const selectRefSpecies = useRef<ElementRef<'select'>>(null)
+  const selectRefColor = useRef<ElementRef<'select'>>(null)
+  const selectRefBreed = useRef<ElementRef<'select'>>(null)
+  const selectRefPorte = useRef<ElementRef<'select'>>(null)
 
   // Atualiza os estados de filters dinamicamente
-  const handleFilterChange = (event) => {
+  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = event.target
     setFilters({
       ...filters,
@@ -29,95 +107,35 @@ export function Pets() {
     })
   }
 
-  // dados fakes simulando o que virá da requisição
-  const animais = [
-    {
-      id: 1,
-      name: 'Vira lata marrom',
-      description:
-        'Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás.',
-      species: 'Cachorro',
-      breed: 'Vira lata',
-      color: 'Marrom',
-      image: 'https://placedog.net/400?random1',
-    },
-    {
-      id: 2,
-      name: 'Golden Retriever',
-      description: 'Golden Retriever com pelo dourado e muito amigável.',
-      species: 'Cachorro',
-      breed: 'Golden Retriever',
-      color: 'Dourado',
-      image: 'https://placedog.net/400?random2',
-    },
-    {
-      id: 3,
-      name: 'Kitty',
-      description: 'Labrador preto com uma personalidade muito brincalhona.',
-      species: 'Gato',
-      breed: 'Labrador',
-      color: 'Preto',
-      image: 'https://placedog.net/400?random3',
-    },
-    {
-      id: 4,
-      name: 'Vacalo',
-      description: 'Poodle branco com pelos encaracolados e muito elegante.',
-      species: 'Cavalo',
-      breed: 'Poodle',
-      color: 'Branco',
-      image: 'https://placedog.net/400?random4',
-    },
-    {
-      id: 5,
-      name: 'Periquito',
-      description: 'Bulldog com uma aparência robusta e muito carinhoso.',
-      species: 'Ave',
-      breed: 'Bulldog',
-      color: 'Branco',
-      image: 'https://placedog.net/400?random5',
-    },
-    {
-      id: 6,
-      name: '6',
-      description: 'Bulldog com uma aparência robusta e muito carinhoso.',
-      species: 'Cachorro',
-      breed: 'Bulldog',
-      color: 'Branco',
-      image: 'https://placedog.net/400?random5',
-    },
-    {
-      id: 7,
-      name: '7',
-      description: 'Poodle branco com pelos encaracolados e muito elegante.',
-      species: 'Cachorro',
-      breed: 'Poodle',
-      color: 'Branco',
-      image: 'https://placedog.net/400?random4',
-    },
-  ]
-
   const pegarFiltros = () => {
-    const specie = selectRefSpecies.current.value
-    const cor = selectRefColor.current.value
-    const breed = selectRefBreed.current.value
-    const porte = selectRefPorte.current.value
+    const specie = selectRefSpecies.current?.value
+    const cor = selectRefColor.current?.value
+    const breed = selectRefBreed.current?.value
+    const porte = selectRefPorte.current?.value
 
     console.log('Selected color:', cor)
 
-    const filtros = { color: cor, species: specie, breed, porte }
+    const filtros = {
+      breed,
+      color: cor,
+      species: specie,
+      size: porte,
+    }
     const resultado = filtrar(animais, filtros)
     setResultados(resultado)
     console.log(resultado)
   }
 
-  const filtrar = (animais, filtros) => {
+  const filtrar = (
+    animais: Animal[],
+    filtros: Record<string, string | undefined>,
+  ) => {
     return animais.filter((animal) => {
       return Object.keys(filtros).every((chave) => {
         return (
-          filtros[chave] === '' ||
-          (animal[chave] &&
-            animal[chave]
+          !filtros[chave] ||
+          (animal[chave as keyof Animal] &&
+            animal[chave as keyof Animal]
               .toString()
               .toLowerCase()
               .includes(filtros[chave].toString().toLowerCase()))
