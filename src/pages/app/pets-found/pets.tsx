@@ -134,11 +134,12 @@ export function Pets() {
       return Object.keys(filtros).every((chave) => {
         return (
           !filtros[chave] ||
-          (animal[chave as keyof Animal] &&
+          (!!filtros[chave] &&
+            animal[chave as keyof Animal] &&
             animal[chave as keyof Animal]
               .toString()
               .toLowerCase()
-              .includes(filtros[chave].toString().toLowerCase()))
+              .includes(filtros[chave]!.toString().toLowerCase()))
         )
       })
     })
