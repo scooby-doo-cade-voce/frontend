@@ -1,3 +1,4 @@
+import { HelpFind } from '@/components/help-find'
 import { Helmet } from 'react-helmet-async'
 import { AboutUs } from './about-us'
 import { GiveAPaw } from './give-a-paw'
@@ -17,6 +18,7 @@ export function HomePage() {
       <GiveAPaw />
       <Pets />
       <RegisterPet />
+      <HelpFind />
     </>
   )
 }
