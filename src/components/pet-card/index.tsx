@@ -1,12 +1,12 @@
 import {
   Dialog,
-  DialogTrigger,
   DialogContent,
-  DialogTitle,
   DialogDescription,
+  DialogTitle,
+  DialogTrigger,
 } from '@radix-ui/react-dialog'
-import { Link } from 'react-router-dom'
 import { ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
 
 interface PetCardProps {
