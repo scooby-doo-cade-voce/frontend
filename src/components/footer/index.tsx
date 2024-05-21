@@ -1,16 +1,19 @@
-import { menusItems } from '@/utils/menu'
+import { Link } from 'react-router-dom'
 import { Logo } from '../logo'
 
 const currentYear = new Date().getFullYear()
 
 const footerMenus = [
-  ...menusItems,
+  {
+    href: '/equipe',
+    label: 'Equipe',
+  },
   {
     href: '/cadastrar-pet',
     label: 'Cadastar um pet',
   },
   {
-    href: '/apoiar',
+    href: 'https://apoia.se/cadevc',
     label: 'Apoiar',
   },
 ]
@@ -35,12 +38,21 @@ export function AppFooter() {
             <ul className="space-y-3">
               {footerMenus.map((menu) => (
                 <li key={menu.href.concat('footer-menu')}>
-                  <a
-                    href={menu.href}
-                    className="transition-colors duration-200 ease-in-out hover:text-primary"
-                  >
-                    {menu.label}
-                  </a>
+                  {menu.href.startsWith('/#') ? (
+                    <a
+                      href={menu.href}
+                      className="transition-colors duration-200 ease-in-out hover:text-primary"
+                    >
+                      {menu.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={menu.href}
+                      className="transition-colors duration-200 ease-in-out hover:text-primary"
+                    >
+                      {menu.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
