@@ -1,6 +1,11 @@
+import { ChevronRight } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
 import { Paw } from '../paw'
+import { Button } from '../ui/button'
 
 export function HelpFind() {
+  const location = useLocation()
+
   return (
     <section className="bg-primary-500 py-10 text-white lg:py-20">
       <div className="container">
@@ -10,12 +15,23 @@ export function HelpFind() {
           Faça a Diferença na Vida de um Pet
         </h2>
 
-        <p className="text-balance text-center lg:text-2xl">
+        <p className="text-balance text-center lg:text-xl">
           Não espere mais! Se você encontrou um pet perdido, cadastre-o aqui e
           ajude-nos a reconectá-lo com sua família. Cada ação sua traz
           esperança. Clique no botão abaixo para começar a fazer a diferença
           agora mesmo.
         </p>
+
+        {['/', '/pets-encontratos'].includes(location.pathname) && (
+          <Button
+            asChild
+            className="mx-auto mt-7 flex h-auto w-fit gap-1 bg-white px-6 py-3 text-base font-semibold text-primary hover:bg-white/80 lg:mt-14"
+          >
+            <Link to="/cadastrar-pet">
+              Cadastrar Pet <ChevronRight className="size-4" />
+            </Link>
+          </Button>
+        )}
       </div>
     </section>
   )
