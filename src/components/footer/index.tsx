@@ -9,10 +9,6 @@ const footerMenus = [
     label: 'Equipe',
   },
   {
-    href: '/cadastrar-pet',
-    label: 'Cadastar um pet',
-  },
-  {
     href: 'https://apoia.se/cadevc',
     label: 'Apoiar',
   },

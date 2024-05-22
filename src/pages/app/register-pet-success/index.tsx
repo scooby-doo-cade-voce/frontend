@@ -1,4 +1,5 @@
 import testImg from '@/assets/imgs/girt-sitting-next-to-dog.webp'
+import { Paw } from '@/components/paw'
 import { Button } from '@/components/ui/button'
 import { ImageWithLoader } from '@/components/ui/image-with-loader'
 import { ChevronRight } from 'lucide-react'
@@ -34,12 +35,30 @@ export const PetSubscriptionDonePage = () => {
           </div>
         </div>
       </div>
+
       <div className="w-full lg:w-1/2">
         <ImageWithLoader
           src={testImg}
           alt="Jovem mulher sentada próxima a um cachorro tirando uma foto"
         />
       </div>
+
+      <section className="bg-primary-500 py-10 text-white lg:py-20">
+        <div className="container">
+          <Paw className="mx-auto mb-2.5 size-10 lg:mb-11 lg:h-[68px] lg:w-[72px]" />
+
+          <h2 className="mb-6 text-balance text-center text-2xl font-bold lg:mb-11 lg:text-5xl">
+            Você fez a diferença!
+          </h2>
+
+          <p className="text-balance text-center lg:text-xl">
+            Não contavam com sua AUstúcia! Você registrou um pet perdido e
+            trouxe esperança! O mundo precisa de mais pessoas como você. Se você
+            tem mais pets perdidos, não hesite em cadastrar e continue fazendo a
+            diferença.
+          </p>
+        </div>
+      </section>
     </div>
   )
 }
