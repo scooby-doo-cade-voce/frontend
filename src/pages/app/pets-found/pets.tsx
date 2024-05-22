@@ -2,151 +2,67 @@ import { Paw } from '@/components/paw'
 import { PetCard } from '@/components/pet-card'
 import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
-import { useEffect, useRef, useState, type ElementRef } from 'react'
+import { useEffect, useState } from 'react'
 import PurpleArrow from '../../../assets/imgs/purplearrow.webp'
-
-type Animal = {
-  id: number
-  name: string
-  description: string
-  species: string
-  breed: string
-  color: string
-  image: string
-}
-
-// dados fakes simulando o que virá da requisição
-const animais: Animal[] = [
-  {
-    id: 1,
-    name: 'Vira lata marrom',
-    description:
-      'Vira lata marrom com focinho preto, coleira bege, mancha branca no peito e mancha bege na pata direita de trás.',
-    species: 'Cachorro',
-    breed: 'Vira lata',
-    color: 'Marrom',
-    image: 'https://placedog.net/400?random1',
-  },
-  {
-    id: 2,
-    name: 'Golden Retriever',
-    description: 'Golden Retriever com pelo dourado e muito amigável.',
-    species: 'Cachorro',
-    breed: 'Golden Retriever',
-    color: 'Dourado',
-    image: 'https://placedog.net/400?random2',
-  },
-  {
-    id: 3,
-    name: 'Kitty',
-    description: 'Labrador preto com uma personalidade muito brincalhona.',
-    species: 'Gato',
-    breed: 'Labrador',
-    color: 'Preto',
-    image: 'https://placedog.net/400?random3',
-  },
-  {
-    id: 4,
-    name: 'Vacalo',
-    description: 'Poodle branco com pelos encaracolados e muito elegante.',
-    species: 'Cavalo',
-    breed: 'Poodle',
-    color: 'Branco',
-    image: 'https://placedog.net/400?random4',
-  },
-  {
-    id: 5,
-    name: 'Periquito',
-    description: 'Bulldog com uma aparência robusta e muito carinhoso.',
-    species: 'Ave',
-    breed: 'Bulldog',
-    color: 'Branco',
-    image: 'https://placedog.net/400?random5',
-  },
-  {
-    id: 6,
-    name: '6',
-    description: 'Bulldog com uma aparência robusta e muito carinhoso.',
-    species: 'Cachorro',
-    breed: 'Bulldog',
-    color: 'Branco',
-    image: 'https://placedog.net/400?random5',
-  },
-  {
-    id: 7,
-    name: '7',
-    description: 'Poodle branco com pelos encaracolados e muito elegante.',
-    species: 'Cachorro',
-    breed: 'Poodle',
-    color: 'Branco',
-    image: 'https://placedog.net/400?random4',
-  },
-]
+import {
+  Animal,
+  animals as getAnimals,
+  search as animalsSearch,
+  SearchParams,
+} from '@/services/animals'
+import { Size, sizes as getSizes } from '@/services/sizes'
+import { Color, colors as getColors } from '@/services/colors'
+import { Specie, species as getSpecies } from '@/services/species'
+import { Controller, useForm } from 'react-hook-form'
 
 export function Pets() {
-  const [filters, setFilters] = useState({
-    species: '',
-    color: '',
-    breed: '',
-    porte: '',
+  const initialState: {
+    specie_id: string
+    color_id: string
+    size_id: string
+  } = {
+    specie_id: '',
+    color_id: '',
+    size_id: '',
+  }
+
+  const { control, handleSubmit } = useForm({
+    defaultValues: initialState,
+    /* resolver: yupResolver(validationSchema), */
   })
 
-  const [resultados, setResultados] = useState<Animal[]>([])
-
-  const selectRefSpecies = useRef<ElementRef<'select'>>(null)
-  const selectRefColor = useRef<ElementRef<'select'>>(null)
-  const selectRefBreed = useRef<ElementRef<'select'>>(null)
-  const selectRefPorte = useRef<ElementRef<'select'>>(null)
-
-  // Atualiza os estados de filters dinamicamente
-  const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = event.target
-    setFilters({
-      ...filters,
-      [name]: value,
-    })
+  const onSubmit = async (data: SearchParams): Promise<void> => {
+    const result: Animal[] = await animalsSearch(data)
+    setAnimals(result)
   }
 
-  const pegarFiltros = () => {
-    const specie = selectRefSpecies.current?.value
-    const cor = selectRefColor.current?.value
-    const breed = selectRefBreed.current?.value
-    const porte = selectRefPorte.current?.value
+  const [species, setSpecies] = useState<Specie[]>([])
+  const [colors, setColors] = useState<Color[]>([])
+  const [sizes, setSizes] = useState<Size[]>([])
+  const [animals, setAnimals] = useState<Animal[]>([])
 
-    console.log('Selected color:', cor)
-
-    const filtros = {
-      breed,
-      color: cor,
-      species: specie,
-      size: porte,
-    }
-    const resultado = filtrar(animais, filtros)
-    setResultados(resultado)
-    console.log(resultado)
+  const listSpecies = async (): Promise<void> => {
+    const result = await getSpecies()
+    setSpecies(result)
   }
 
-  const filtrar = (
-    animais: Animal[],
-    filtros: Record<string, string | undefined>,
-  ) => {
-    return animais.filter((animal) => {
-      return Object.keys(filtros).every((chave) => {
-        return (
-          !filtros[chave] ||
-          (!!filtros[chave] &&
-            animal[chave as keyof Animal] &&
-            animal[chave as keyof Animal]
-              .toString()
-              .toLowerCase()
-              .includes(filtros[chave]!.toString().toLowerCase()))
-        )
-      })
-    })
+  const listColors = async (): Promise<void> => {
+    const result = await getColors()
+    setColors(result)
+  }
+
+  const listSizes = async (): Promise<void> => {
+    const result = await getSizes()
+    setSizes(result)
+  }
+
+  const listAnimals = async (): Promise<void> => {
+    const result = await getAnimals()
+    setAnimals(result)
   }
 
   useEffect(() => {
-    setResultados(animais)
+    Promise.all([listColors(), listSizes(), listAnimals(), listSpecies()])
   }, [])
 
   return (
@@ -168,89 +84,84 @@ export function Pets() {
         <h2 className="mb-16  flex items-center justify-center gap-3 text-3xl font-semibold text-black">
           Galeria de pets encontrados <Paw className="size-7 rotate-45" />
         </h2>
-        <div className="flex justify-center space-x-4">
-          <form className="max-w-sm">
-            <select
-              id="species"
-              name="species"
-              className="h-14 w-64 rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              value={filters.species}
-              onChange={handleFilterChange}
-              ref={selectRefSpecies}
-            >
-              <option value="">Espécie</option>
-              <option value="Cachorro">Cachorro</option>
-              <option value="Gato">Gato</option>
-              <option value="Equino">Equino</option>
-              <option value="Bovino">Bovino</option>
-            </select>
-          </form>
+        <div className="justify-center">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-wrap gap-6">
+              <Controller
+                key={`species`}
+                name="specie_id"
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <select
+                    className="h-14 flex-grow rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    value={value}
+                    onChange={(val) => onChange(val)}
+                  >
+                    <option value="">Espécie</option>
+                    {species?.map((specie: Specie) => (
+                      <option key={specie.id} value={specie.id}>
+                        {specie.label}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              />
 
-          <form className="max-w-sm">
-            <select
-              id="breed"
-              name="breed"
-              className="h-14 w-64 rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              value={filters.breed}
-              onChange={handleFilterChange}
-              ref={selectRefBreed}
-            >
-              <option value="">Raça</option>
-              <option value="Labrador">Labrador</option>
-              <option value="Vira lata">Vira lata</option>
-              <option value="Vira lata caramelo">Vira lata caramelo</option>
-              <option value="Caramelo Vira Lata">Caramelo Vira Lata</option>
-            </select>
-          </form>
+              <Controller
+                key={`sizes`}
+                name="size_id"
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <select
+                    className="h-14 flex-grow rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    value={value?.toString()}
+                    onChange={(val) => onChange(val)}
+                  >
+                    <option value="">Tamanho</option>
+                    {sizes?.map((size: Size) => (
+                      <option key={size.id} value={size.id}>
+                        {size.label}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              />
 
-          <form className="max-w-sm">
-            <select
-              id="porte"
-              name="porte"
-              className="h-14 w-64 rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              value={filters.porte}
-              onChange={handleFilterChange}
-              ref={selectRefPorte}
-            >
-              <option value="">Porte</option>
-              <option value="P">P</option>
-              <option value="M">M</option>
-              <option value="G">G</option>
-              <option value="GG">GG</option>
-            </select>
+              <Controller
+                key={`colors`}
+                name="color_id"
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <select
+                    className="h-14 flex-grow rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+                    value={value?.toString()}
+                    onChange={(val) => onChange(val)}
+                  >
+                    <option value="">Cor</option>
+                    {colors?.map((color: Color) => (
+                      <option key={color.id} value={color.id}>
+                        {color.label}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              />
+              <Button className="h-17 flex-grow">Filtrar</Button>
+            </div>
           </form>
-          <form className="max-w-sm">
-            <select
-              id="color"
-              name="color"
-              className="h-14 w-64 rounded-lg border border-gray-300 bg-primary-50 p-2.5 text-sm text-gray-900 text-primary-500 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
-              value={filters.color}
-              onChange={handleFilterChange}
-              ref={selectRefColor}
-            >
-              <option value="">Cor</option>
-              <option value="Vermelho">Vermelho</option>
-              <option value="Branco">Branco</option>
-              <option value="Caramelo">Caramelo</option>
-              <option value="Cinza">Cinza</option>
-            </select>
-          </form>
-          <Button className="w-23 h-17" onClick={pegarFiltros}>
-            Filtrar
-          </Button>
         </div>
 
         <div className="mt-10 grid gap-5 lg:grid-cols-4">
           {/* Exibe os resultados do filtro */}
-          {resultados.map((animal) => (
+          {animals?.map((animal) => (
             <PetCard
               key={animal.id}
-              imageSrc={animal.image}
+              id={animal.id}
               title={animal.name}
               description={animal.description}
-              species={animal.species}
-              breed={animal.breed}
-              color={animal.color}
+              specie={animal.specie_id}
+              size={animal.specie_id}
+              color={animal.color_id}
             />
           ))}
         </div>

@@ -11,19 +11,22 @@ import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
 
 interface PetCardProps {
-  imageSrc: string
+  id: number
+  imageSrc?: string
   title: string
   description: string
-  species: string
-  breed: string
-  color: string
+  specie: number
+  size: number
+  breed?: string
+  color: number
 }
 
 export function PetCard({
   imageSrc,
   title,
   description,
-  species,
+  specie,
+  // size,
   breed,
   color,
 }: PetCardProps) {
@@ -53,7 +56,7 @@ export function PetCard({
                 <div className="space-y-2">
                   <div className="text-sm">
                     <strong className="mr-2 font-semibold">Espécie:</strong>
-                    <span>{species}</span>
+                    <span>{specie}</span>
                   </div>
                   <div className="text-sm">
                     <strong className="mr-2 font-semibold">Raça:</strong>
