@@ -41,7 +41,11 @@ export function AppHeader() {
         )}
       >
         <div className="container flex items-center justify-between gap-6">
-          <Collapsible.Trigger className="lg:hidden">
+          <Link to="/" className="inline-block">
+            <Logo className="h-[26px] w-[111px] text-primary lg:h-[52px] lg:w-[222px]" />
+          </Link>
+
+          <Collapsible.Trigger className="text-primary lg:hidden">
             {!isOpen ? (
               <HamburgerMenuIcon className="size-6" />
             ) : (
@@ -49,12 +53,8 @@ export function AppHeader() {
             )}
           </Collapsible.Trigger>
 
-          <Link to="/" className="inline-block">
-            <Logo className="h-[26px] w-[111px] text-primary lg:h-[52px] lg:w-[222px]" />
-          </Link>
-
           <Collapsible.Content asChild forceMount>
-            <nav className="radix-state-closed:animate-slideUpAndFade radix-state-open:animate-slideDownAndFade dark:bg-neutral-1000 fixed left-0 right-0 top-[90px] z-50 flex flex-col gap-4 bg-white p-4 radix-state-closed:hidden radix-state-open:bottom-0 lg:relative lg:top-0 lg:flex-row lg:items-center lg:justify-evenly lg:gap-6 lg:bg-transparent lg:p-0 lg:radix-state-closed:flex">
+            <nav className="radix-state-closed:animate-slideUpAndFade radix-state-open:animate-slideDownAndFade dark:bg-neutral-1000 fixed left-0 right-0 top-[74px] z-50 flex flex-col gap-4 bg-white p-4 radix-state-closed:hidden radix-state-open:bottom-0 lg:relative lg:top-0 lg:flex-row lg:items-center lg:justify-evenly lg:gap-6 lg:bg-transparent lg:p-0 lg:radix-state-closed:flex">
               {isHomePage &&
                 menus.map((menu) => (
                   <Fragment key={menu.href.concat('header-menu-item')}>
@@ -105,6 +105,7 @@ export function AppHeader() {
               <Button
                 asChild
                 className="h-auto items-center gap-2 rounded-lg px-4 py-3 text-base leading-none"
+                onClick={() => setIsOpen(false)}
               >
                 {isSubscriptionPage ? (
                   <Link

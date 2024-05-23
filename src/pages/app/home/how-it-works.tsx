@@ -3,14 +3,14 @@ import { ImageWithLoader } from '@/components/ui/image-with-loader'
 
 export function HowItWorks() {
   return (
-    <section id="como-usar" className="py-6 lg:py-14">
+    <section id="como-usar" className="py-4 lg:py-14">
       <div className="container flex flex-col-reverse items-center gap-12 lg:flex-row lg:gap-24">
         <div>
-          <h2 className="mb-4 text-center text-3xl font-semibold text-primary lg:mb-7 lg:text-left lg:text-5xl">
+          <h2 className="mb-3 text-center text-lg font-semibold text-primary lg:mb-7 lg:text-left lg:text-5xl">
             Como funciona?
           </h2>
 
-          <div className="space-y-4 text-center lg:text-left lg:text-xl">
+          <div className="space-y-4 text-center text-sm lg:text-left lg:text-xl">
             <p>
               O site oferece uma base de dados abrangente de animais perdidos,
               compilados a partir de informações fornecidas por instituições e

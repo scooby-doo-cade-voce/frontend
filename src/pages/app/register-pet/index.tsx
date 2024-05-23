@@ -13,11 +13,11 @@ export function RegisterPet() {
         <Helmet title="Cadastrar Pet" />
 
         <div className="flex max-w-md flex-col gap-1">
-          <h1 className="text-center text-2xl font-semibold text-primary lg:mb-5 lg:text-left lg:text-5xl">
+          <h1 className="text-center text-xl font-semibold text-primary lg:mb-5 lg:text-left lg:text-5xl">
             Cadastre um pet
           </h1>
 
-          <p className="mb-1 text-balance text-center font-light lg:text-left lg:text-xl">
+          <p className="mb-1 text-balance text-center text-sm font-light lg:text-left lg:text-xl">
             Registre e Aumente as Possibilidades de Encontrar seu Amigo
           </p>
 
@@ -37,11 +37,11 @@ export function RegisterPet() {
         <div className="container">
           <Paw className="mx-auto mb-2.5 size-10 lg:mb-11 lg:h-[68px] lg:w-[72px]" />
 
-          <h2 className="mb-6 text-balance text-center text-2xl font-bold lg:mb-11 lg:text-5xl">
+          <h2 className="mb-3 text-balance text-center text-xl font-bold lg:mb-11 lg:text-5xl">
             Está quase lá...
           </h2>
 
-          <p className="text-balance text-center lg:text-xl">
+          <p className="text-balance text-center text-sm lg:text-xl">
             Continue assim! Se você encontrou um pet perdido, preencha as
             informações do pet e ajude-o a ter seu lar de volta. Cada ação sua
             traz esperança. Cadastre um pet para começar a fazer a diferença

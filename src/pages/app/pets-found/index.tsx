@@ -15,11 +15,11 @@ export function PetsFound() {
         <div className="container">
           <Paw className="mx-auto mb-2.5 size-10 lg:mb-11 lg:h-[68px] lg:w-[72px]" />
 
-          <h2 className="mb-6 text-balance text-center text-2xl font-bold lg:mb-11 lg:text-5xl">
+          <h2 className="mb-3 text-balance text-center text-xl font-bold lg:mb-11 lg:text-5xl">
             Faça a Diferença na Vida de um Pet
           </h2>
 
-          <p className="text-balance text-center lg:text-xl">
+          <p className="text-balance text-center text-sm lg:text-xl">
             Não espere mais! Se você encontrou um pet perdido, cadastre-o aqui e
             ajude-nos a reconectá-lo com sua família. Cada ação sua traz
             esperança. Clique no botão abaixo para começar a fazer a diferença

@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 
 export function Hero() {
   return (
-    <section className="py-6 lg:py-14">
+    <section className="pb-4 lg:py-14">
       <div className="container flex flex-col-reverse gap-12 lg:flex-row lg:items-center lg:gap-20">
         <div>
-          <h1 className="mb-6 text-center text-2xl font-semibold leading-tight lg:text-left lg:text-5xl">
+          <h1 className="mb-6 text-center text-xl font-semibold leading-tight lg:text-left lg:text-5xl">
             <span className="text-primary">Encontre seu Pet</span> Perdido.
             Juntos na Busca por Nossos{' '}
             <span className="relative">
@@ -33,7 +33,7 @@ export function Hero() {
             Perdidos no Rio Grande do Sul
           </h1>
 
-          <div className="space-y-4 text-center lg:text-left lg:text-xl">
+          <div className="space-y-4 text-center text-sm lg:text-left lg:text-xl">
             <p>
               Após o recente acidente no Rio Grande do Sul,{' '}
               <strong className="font-bold">&apos;Cadê Você?&apos;</strong>
@@ -43,7 +43,7 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-4">
+          <div className="mt-3 flex flex-wrap gap-2 lg:mt-5 lg:gap-4">
             <Button
               asChild
               className="h-auto w-full items-center gap-2 rounded-lg border border-primary px-4 py-3 text-base leading-none lg:w-auto"
