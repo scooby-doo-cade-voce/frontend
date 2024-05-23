@@ -97,7 +97,14 @@ export function PetCard({
           {title}
         </strong>
         <p className="mb-6 text-sm tracking-tighter">{description}</p>
-        <button className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600">
+        <button
+          className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600"
+          type="button"
+          onClick={(e) => {
+            e.preventDefault()
+            window.location.href = 'https://www.whatsapp.com/'
+          }}
+        >
           Entrar em contato
         </button>
       </div>

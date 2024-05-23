@@ -5,6 +5,7 @@ import { Hero } from './hero'
 import { HowItWorks } from './how-it-works'
 import { Pets } from './pets'
 import { RegisterPet } from './register-pet'
+import { Team } from '../volunteers'
 
 export function HomePage() {
   return (
@@ -17,6 +18,7 @@ export function HomePage() {
       <GiveAPaw />
       <Pets />
       <RegisterPet />
+      <Team />
     </>
   )
 }
