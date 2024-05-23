@@ -71,5 +71,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "description": "README - Projeto \"Cade Voce?\"",
+  "main": "commitlint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
