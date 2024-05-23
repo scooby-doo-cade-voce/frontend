@@ -35,14 +35,12 @@ export function Hero() {
 
           <div className="space-y-4 text-center lg:text-left lg:text-xl">
             <p>
-              O site oferece uma base de dados abrangente de animais perdidos,
-              compilados a partir de informações fornecidas por instituições e
-              ONGs dedicadas ao bem-estar animal. Com recursos de busca avançada
-              e filtros específicos, tornamos mais fácil para os donos{' '}
-              <strong className="font-semibold">encontrar</strong> seus animais
-              perdidos e para aqueles que encontraram animais perdidos{' '}
-              <strong className="font-semibold">localizar seus donos.</strong>
+            Após o recente acidente no Rio Grande do Sul, <strong className="font-semibold">'Cadê Você?'</strong>
+            conecta pets perdidos a suas famílias. Adicione fotos do seu amigo
+            desaparecido ou ajude reconhecendo pets encontrados por
+            abrigos e voluntários. Vamos reunir cada animal com seu lar.
             </p>
+          </div>
 
             <p>
               <strong className="font-semibold">&quot;Cadê Você?&quot;</strong>{' '}
