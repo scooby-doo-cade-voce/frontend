@@ -13,12 +13,12 @@ export function Pets() {
 
   return (
     <section
-      className="overflow-hidden bg-[#FCFAFF] py-6 lg:py-14"
+      className="overflow-hidden bg-[#FCFAFF] py-10 lg:py-14"
       id="pets-encontrados"
     >
       <div className="container">
-        <h2 className="mb-4 flex items-center justify-center gap-4 text-2xl font-semibold text-black lg:text-5xl">
-          Pets encontrados <Paw className="size-8 rotate-45 lg:size-10" />
+        <h2 className="mb-3 flex items-center justify-center gap-4 text-lg font-semibold text-black lg:text-5xl">
+          Pets encontrados <Paw className="size-5 rotate-45 lg:size-10" />
         </h2>
 
         <p className="text-balance text-center text-sm lg:text-2xl">

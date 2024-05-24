@@ -12,11 +12,11 @@ export function AboutUs() {
         />
 
         <div>
-          <h2 className="mb-4 text-center text-3xl font-semibold text-primary lg:mb-7 lg:text-left lg:text-5xl">
+          <h2 className="mb-3 text-center text-lg font-semibold text-primary lg:mb-7 lg:text-left lg:text-5xl">
             Sobre nós
           </h2>
 
-          <div className="space-y-4 text-center lg:text-left lg:text-xl">
+          <div className="space-y-4 text-center text-sm lg:text-left lg:text-xl">
             <p>
               Devido à recente enchente no Rio Grande do Sul, muitos animais
               foram separados de seus donos. Em resposta a essa crise,

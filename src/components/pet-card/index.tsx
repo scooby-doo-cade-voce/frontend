@@ -29,7 +29,7 @@ export function PetCard({
   color,
 }: PetCardProps) {
   return (
-    <div className=" rounded-lg lg:shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
+    <div className="flex flex-col rounded-lg lg:shadow-[0px_0px_15px_rgba(24,47,67,0.2)]">
       <div className="relative">
         <Dialog>
           <DialogTrigger asChild>
@@ -37,8 +37,9 @@ export function PetCard({
               Ver mais <ZoomIn />
             </button>
           </DialogTrigger>
+
           <DialogPortal>
-            <DialogContent className="flex max-h-[90vh] max-w-fit flex-col items-center p-0 lg:flex-row lg:gap-8">
+            <DialogContent className="flex max-h-[90vh] max-w-fit flex-col items-center border-none p-0 lg:flex-row lg:gap-8">
               <div className="w-[420px] lg:h-[430px]">
                 <img
                   src={imageSrc}
@@ -73,6 +74,7 @@ export function PetCard({
                     </DialogDescription>
                   </div>
                 </div>
+
                 <Button
                   asChild
                   className="mt-5 h-auto w-full items-center gap-2 rounded-lg px-4 py-3 text-base leading-none lg:mt-12 lg:w-auto"
@@ -86,6 +88,7 @@ export function PetCard({
             </DialogContent>
           </DialogPortal>
         </Dialog>
+
         <img
           src={imageSrc}
           alt={title}
@@ -93,14 +96,21 @@ export function PetCard({
           className="bg-shimmer h-60 w-full object-cover object-center"
         />
       </div>
-      <div className="rounded-b-lg border-x border-b bg-white p-4">
-        <strong className="mb-4 text-xl font-semibold lg:text-2xl">
-          {title}
-        </strong>
-        <p className="mb-6 text-sm tracking-tighter">{description}</p>
-        <button className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600">
+
+      <div className="flex flex-1 flex-col justify-between rounded-b-lg border-x border-b bg-white p-4">
+        <div className="flex-1">
+          <strong className="mb-4 text-xl font-semibold lg:text-2xl">
+            {title}
+          </strong>
+          <p className="mb-6 text-sm tracking-tighter">{description}</p>
+        </div>
+
+        <a
+          href={'https://wa.me/'}
+          className="text-sm font-semibold text-primary transition-colors duration-200 ease-in-out hover:text-primary-600"
+        >
           Entrar em contato
-        </button>
+        </a>
       </div>
     </div>
   )
