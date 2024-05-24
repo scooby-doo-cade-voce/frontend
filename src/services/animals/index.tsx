@@ -7,6 +7,10 @@ interface Responsible {
   email?: string
 }
 
+interface Media {
+  mediaType: string
+  url: string
+}
 export interface Animal {
   id: number
   name: string
@@ -16,7 +20,7 @@ export interface Animal {
   size_id: number
   specie_id: number
   responsible: Responsible
-  medias: []
+  medias: Media[]
 }
 
 export interface SearchParams {

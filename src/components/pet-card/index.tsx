@@ -15,10 +15,9 @@ interface PetCardProps {
   imageSrc?: string
   title: string
   description: string
-  specie: number
-  size: number
-  breed?: string
-  color: number
+  specie?: string
+  size?: string
+  color?: string
 }
 
 export function PetCard({
@@ -26,8 +25,7 @@ export function PetCard({
   title,
   description,
   specie,
-  // size,
-  breed,
+  size,
   color,
 }: PetCardProps) {
   return (
@@ -59,8 +57,8 @@ export function PetCard({
                     <span>{specie}</span>
                   </div>
                   <div className="text-sm">
-                    <strong className="mr-2 font-semibold">Raça:</strong>
-                    <span>{breed}</span>
+                    <strong className="mr-2 font-semibold">Tamanho:</strong>
+                    <span>{size}</span>
                   </div>
                   <div className="text-sm">
                     <strong className="mr-2 font-semibold">Cor:</strong>

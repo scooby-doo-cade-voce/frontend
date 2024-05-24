@@ -155,13 +155,22 @@ export function Pets() {
           {/* Exibe os resultados do filtro */}
           {animals?.map((animal) => (
             <PetCard
+              imageSrc={animal.medias[0].url}
               key={animal.id}
               id={animal.id}
               title={animal.name}
               description={animal.description}
-              specie={animal.specie_id}
-              size={animal.specie_id}
-              color={animal.color_id}
+              specie={
+                species.filter(
+                  (item: Specie) => item.id === animal.specie_id,
+                )[0].label
+              }
+              size={
+                sizes.find((item: Size) => item.id === animal.size_id)?.label
+              }
+              color={
+                colors.find((item: Color) => item.id === animal.color_id)?.label
+              }
             />
           ))}
         </div>
