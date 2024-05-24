@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom'
 
 export function Hero() {
   return (
-    <section className="pb-4 lg:py-14">
-      <div className="container flex flex-col-reverse gap-12 lg:flex-row lg:items-center lg:gap-20">
+    <section className="py-6 lg:py-14">
+      <div className="container flex flex-col-reverse gap-12 sm:items-center lg:flex-row lg:items-center lg:gap-20">
         <div>
           <h1 className="mb-6 text-center text-xl font-semibold leading-tight lg:text-left lg:text-5xl">
             <span className="text-primary">Encontre seu Pet</span> Perdido.
