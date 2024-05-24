@@ -3,11 +3,10 @@ import { createBrowserRouter } from 'react-router-dom'
 import { NotFound } from './pages/404'
 import { AppLayout } from './pages/_layouts/app'
 import { HomePage } from './pages/app/home'
-
 import { PetsFound } from './pages/app/pets-found'
-
 import { RegisterPet } from './pages/app/register-pet'
 import { PetSubscriptionDonePage } from './pages/app/register-pet-success'
+import { Team } from './pages/app/volunteers'
 
 export const router = createBrowserRouter([
   {
@@ -32,5 +31,10 @@ export const router = createBrowserRouter([
         element: <PetSubscriptionDonePage />,
       },
     ],
+  },
+  {
+    path: '/equipe',
+    element: <Team />,
+    errorElement: <NotFound />,
   },
 ])

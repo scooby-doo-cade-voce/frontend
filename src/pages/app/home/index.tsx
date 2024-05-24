@@ -9,6 +9,7 @@ import { Hero } from './hero'
 import { HowItWorks } from './how-it-works'
 import { Pets } from './pets'
 import { RegisterPet } from './register-pet'
+import { Team } from '../volunteers'
 
 export function HomePage() {
   return (
@@ -21,7 +22,8 @@ export function HomePage() {
       <GiveAPaw />
       <Pets />
       <RegisterPet />
-
+      <Team />
+       
       <section className="bg-primary-500 py-10 text-white lg:py-20">
         <div className="container">
           <Paw className="mx-auto mb-2.5 size-10 lg:mb-11 lg:h-[68px] lg:w-[72px]" />

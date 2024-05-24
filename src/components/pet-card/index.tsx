@@ -61,6 +61,10 @@ export function PetCard({
                     <strong className="mr-2 font-semibold">Tamanho:</strong>
                     <span>{size}</span>
                   </div>
+                  {/* <div className="text-sm">
+                    <strong className="mr-2 font-semibold">Raça:</strong>
+                    <span>{breed}</span>
+                  </div> */}
                   <div className="text-sm">
                     <strong className="mr-2 font-semibold">Cor:</strong>
                     <span>{color}</span>
