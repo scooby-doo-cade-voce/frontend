@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom'
 export function Hero() {
   return (
     <section className="py-6 lg:py-14">
-      <div className="container flex flex-col-reverse gap-12 lg:flex-row lg:items-center lg:gap-20">
+      <div className="container flex flex-col-reverse gap-12 sm:items-center lg:flex-row lg:items-center lg:gap-20">
         <div>
-          <h1 className="mb-6 text-center text-2xl font-semibold leading-tight lg:text-left lg:text-5xl">
+          <h1 className="mb-6 text-center text-xl font-semibold leading-tight lg:text-left lg:text-5xl">
             <span className="text-primary">Encontre seu Pet</span> Perdido.
             Juntos na Busca por Nossos{' '}
             <span className="relative">
@@ -33,26 +33,17 @@ export function Hero() {
             Perdidos no Rio Grande do Sul
           </h1>
 
-          <div className="space-y-4 text-center lg:text-left lg:text-xl">
+          <div className="space-y-4 text-center text-sm lg:text-left lg:text-xl">
             <p>
-              O site oferece uma base de dados abrangente de animais perdidos,
-              compilados a partir de informações fornecidas por instituições e
-              ONGs dedicadas ao bem-estar animal. Com recursos de busca avançada
-              e filtros específicos, tornamos mais fácil para os donos{' '}
-              <strong className="font-semibold">encontrar</strong> seus animais
-              perdidos e para aqueles que encontraram animais perdidos{' '}
-              <strong className="font-semibold">localizar seus donos.</strong>
-            </p>
-
-            <p>
-              <strong className="font-semibold">&quot;Cadê Você?&quot;</strong>{' '}
-              é mais do que uma plataforma, é uma comunidade unida pelo amor aos
-              animais e pelo desejo de ajudar uns aos outros em momentos de
-              dificuldade.
+              Após o recente acidente no Rio Grande do Sul,{' '}
+              <strong className="font-bold">&apos;Cadê Você?&apos;</strong>
+              conecta pets perdidos a suas famílias. Adicione fotos do seu amigo
+              desaparecido ou ajude reconhecendo pets encontrados por abrigos e
+              voluntários. Vamos reunir cada animal com seu lar.
             </p>
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-4">
+          <div className="mt-3 flex flex-wrap gap-2 lg:mt-5 lg:gap-4">
             <Button
               asChild
               className="h-auto w-full items-center gap-2 rounded-lg border border-primary px-4 py-3 text-base leading-none lg:w-auto"

@@ -6,7 +6,7 @@ import girlHuggingCatImg from '@/assets/imgs/girl-hugging-cat.webp'
 import girlWithCatImg from '@/assets/imgs/girl-with-cat.webp'
 import { ImageWithLoader } from '@/components/ui/image-with-loader'
 
-const card = cva('p-5 lg:p-9 rounded-xl', {
+const card = cva('p-6 lg:p-9 rounded-xl', {
   variants: {
     variant: {
       primary: 'bg-primary-50',
@@ -38,10 +38,10 @@ const Card = ({
         src={image}
         alt=""
         loading="lazy"
-        className="mb-6 max-h-[375px] w-full max-w-[342px] object-contain lg:mb-12"
+        className="mb-8 max-h-[375px] w-full max-w-[342px] object-contain lg:mb-12"
       />
 
-      <strong className="mb-4 block text-center font-bold -tracking-[0.0625rem]">
+      <strong className="mb-3 block text-center font-bold -tracking-[0.0625rem]">
         {title}
       </strong>
 
@@ -54,14 +54,14 @@ const Card = ({
 
 export function GiveAPaw() {
   return (
-    <section className="py-5 lg:py-12">
+    <section className="pb-6 pt-3 lg:py-12">
       <div className="container">
-        <h2 className="mb-6 flex flex-col-reverse items-center justify-center gap-3 text-center font-poetsenone text-4xl -tracking-[0.0625rem] text-primary lg:flex-row lg:text-left lg:text-6xl">
+        <h2 className="mb-2 flex flex-col-reverse items-center justify-center gap-3 text-center font-poetsenone text-2xl -tracking-[0.0625rem] text-primary lg:flex-row lg:text-left lg:text-6xl">
           Dê uma patinha!
-          <Paw className="-rotate-6 text-secondary-500" />
+          <Paw className="size-[42px] -rotate-6 text-secondary-500" />
         </h2>
 
-        <p className="text-center lg:text-2xl">
+        <p className="text-center text-sm lg:text-2xl">
           Utilize nosso bot do WhatsApp para{' '}
           <strong className="font-semibold">
             registrar ou buscar pets perdidos
@@ -70,7 +70,7 @@ export function GiveAPaw() {
           amigos peludos o mais breve possível.
         </p>
 
-        <div className="mt-10 flex flex-col gap-5 lg:flex-row">
+        <div className="mt-6 flex flex-col gap-5 lg:mt-10 lg:flex-row">
           <Card
             title="Envio de Informações via WhatsApp"
             description="Envie fotos e detalhes do seu pet perdido, como raça e cor, usando nosso bot no WhatsApp para agilizar a busca."

@@ -2,7 +2,7 @@ export function OthersPlatforms() {
   return (
     <section className="bg-muted py-14 lg:py-28">
       <div className="container">
-        <h2 className="mb-4 text-center text-2xl font-semibold lg:mb-8 lg:text-4xl">
+        <h2 className="mb-3 text-center text-lg font-semibold lg:mb-8 lg:text-4xl">
           Explore Mais Opções
         </h2>
 

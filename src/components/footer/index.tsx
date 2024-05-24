@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Logo } from '../logo'
+import { socials } from './socials'
 
 const currentYear = new Date().getFullYear()
 
@@ -9,10 +10,6 @@ const footerMenus = [
     label: 'Equipe',
   },
   {
-    href: '/cadastrar-pet',
-    label: 'Cadastar um pet',
-  },
-  {
     href: 'https://apoia.se/cadevc',
     label: 'Apoiar',
   },
@@ -20,35 +17,35 @@ const footerMenus = [
 
 export function AppFooter() {
   return (
-    <footer className="border-t pb-5 pt-12 lg:pb-10 lg:pt-24">
-      <div className="container">
-        <div className="mb-20 grid gap-6 lg:mb-32 lg:grid-cols-3">
+    <footer className="border-t bg-primary-500 text-white lg:bg-white lg:text-black">
+      <div className="container py-10">
+        <div className="grid gap-8 px-8 lg:mb-32 lg:grid-cols-3 lg:px-0">
           <div>
-            <Logo className="h-[26px] w-[111px] text-primary lg:h-[52px] lg:w-[222px]" />
+            <Logo className="mx-auto mb-8 h-[36px] w-[152px] text-white lg:mx-0 lg:mb-5 lg:h-[52px] lg:w-[222px] lg:text-primary" />
 
-            <p className="mt-5 text-[#182F43] lg:text-lg">
+            <p className="text-center text-sm lg:text-left lg:text-lg lg:text-[#182F43]">
               Juntos, podemos fazer a diferença. Participe e ajude a reunir os
               pets às suas famílias.
             </p>
           </div>
 
-          <div className="space-y-3 lg:space-y-5">
+          <div className="space-y-2 text-center lg:space-y-5 lg:text-left">
             <h4 className="text-lg font-semibold">Links Úteis:</h4>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerMenus.map((menu) => (
                 <li key={menu.href.concat('footer-menu')}>
                   {menu.href.startsWith('/#') ? (
                     <a
                       href={menu.href}
-                      className="transition-colors duration-200 ease-in-out hover:text-primary"
+                      className="text-sm transition-colors duration-200 ease-in-out hover:text-primary lg:text-base"
                     >
                       {menu.label}
                     </a>
                   ) : (
                     <Link
                       to={menu.href}
-                      className="transition-colors duration-200 ease-in-out hover:text-primary"
+                      className="text-sm transition-colors duration-200 ease-in-out hover:text-primary lg:text-base"
                     >
                       {menu.label}
                     </Link>
@@ -58,25 +55,38 @@ export function AppFooter() {
             </ul>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-1 text-center lg:space-y-5 lg:text-left">
             <h4 className="text-lg font-semibold">Informações de Contato:</h4>
 
             <a
               href="mailto:scoobydoo@cadevoce.tech"
-              className="group block text-black"
+              className="group block cursor-pointer text-sm lg:text-base lg:text-black"
             >
               E-mail:{' '}
-              <span className="underline-offset-4 transition-all duration-200 ease-in-out group-hover:text-primary group-hover:underline">
+              <span className="underline-offset-4 transition-all duration-200 ease-in-out group-hover:underline lg:group-hover:text-primary">
                 scoobydoo@cadevoce.tech
               </span>
             </a>
           </div>
         </div>
 
-        <strong className="block text-center font-semibold text-[#374957]">
-          © {currentYear} Cadê você? Todos os direitos reservados.
-        </strong>
+        <div className="mt-8 flex items-center justify-center gap-3 lg:justify-start">
+          {socials.map((social) => (
+            <a
+              href={social.href}
+              key={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.icon}
+            </a>
+          ))}
+        </div>
       </div>
+
+      <strong className="block bg-primary-700 py-6 text-center text-sm font-normal text-white lg:bg-white lg:text-base lg:font-semibold lg:text-[#374957]">
+        © {currentYear} Cadê você? Todos os direitos reservados.
+      </strong>
     </footer>
   )
 }
