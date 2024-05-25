@@ -1,0 +1,53 @@
+name: Tests
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    branches:
+      - scooby-doo-cade-voce:master
+      - master
+
+jobs:
+  quality-eslint:
+    name: Check eslint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Eslint check
+        run: npm run lint
+
+  quality-codeQL:
+    name: Check codeQL
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      security-events: write
+      packages: read
+      actions: read
+      contents: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: javascript-typescript
+        build-mode: none
+    
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:javascript-typescript"
+
+  
