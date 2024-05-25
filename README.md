@@ -35,29 +35,29 @@ Clone o projeto e acesse a pasta do mesmo.
 
 Com https:
 ```bash
-$ git clone https://github.com/scooby-doo-cade-voce/frontend.git cadevc-frontend
+git clone https://github.com/scooby-doo-cade-voce/frontend.git cadevc-frontend
 ```
 
 Com ssh:
 ```bash
-$ git clone git@github.com:scooby-doo-cade-voce/frontend.git cadevc-frontend
+git clone git@github.com:scooby-doo-cade-voce/frontend.git cadevc-frontend
 ```
 
 Acesse a pasta do projeto
 ```bash
-$ cd cadevc-frontend
+cd cadevc-frontend
 ```
 
 Para iniciá-lo, siga os passos abaixo:
 
 Instalar as dependências
 ```bash
-$ pnpm install
+pnpm install
 ```
 
 Iniciar o projeto
 ```bash
-$ pnpm dev
+pnpm dev
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:5173.
 
