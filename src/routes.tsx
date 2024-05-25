@@ -30,11 +30,10 @@ export const router = createBrowserRouter([
         path: '/cadastro-pet-concluido',
         element: <PetSubscriptionDonePage />,
       },
+      {
+        path: '/equipe',
+        element: <Team />,
+      },
     ],
-  },
-  {
-    path: '/equipe',
-    element: <Team />,
-    errorElement: <NotFound />,
   },
 ])
