@@ -55,6 +55,11 @@ Instalar as dependências
 pnpm install
 ```
 
+Crie um `.env` ou `.env.local` no seu projeto para que rode conectado com o backend
+```bash
+VITE_API_URL=http://localhost:3333 # ou a url do backend
+```
+
 Iniciar o projeto
 ```bash
 pnpm dev
