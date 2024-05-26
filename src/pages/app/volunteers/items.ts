@@ -59,8 +59,7 @@ export const volunteers: Volunteer[] = [
   {
     id: '2b4d9387-965a-4701-a37f-e2f61ea9e1f8',
     name: 'Mário Lúcio',
-    picture:
-      'https://cdn.discordapp.com/attachments/1243259954320642129/1243407120582447185/foto_rindo.jpg?ex=66515c9e&is=66500b1e&hm=9a4f100c7a8ef12e2584ef83b76ebb37cb56d8bb53df9619b0bf390ce05969fb&',
+    picture: '/mario-lucio.jpg',
     role: 'Líder Financeiro',
     email: 'marioluciofjr@gmail.com',
     socials: [
@@ -75,12 +74,31 @@ export const volunteers: Volunteer[] = [
     ],
   },
 
+  // liders marketing
+  {
+    id: '11273f9a-4cbb-4353-9690-5607496eb02c',
+    name: 'Yasmin Costa',
+    picture:
+      'https://cdn.discordapp.com/attachments/1243259954320642129/1243972560266465331/2258E497-3A04-4A52-BBCD-0712F5B6688A.jpg?ex=6654bcba&is=66536b3a&hm=f835ddf3cab7f27674bd28d3cb2eab3a2fab380dbcdcee5c407787df26b788d8&',
+    role: 'Líder Marketing',
+    email: 'tiyasmin14@gmail.com',
+    socials: [
+      {
+        type: 'github',
+        url: 'https://github.com/YASMINCOS',
+      },
+      {
+        type: 'linkedin',
+        url: 'https://www.linkedin.com/in/yasmin-costa-bb24a21a3/',
+      },
+    ],
+  },
+
   // liders backend
   {
     id: 'a46df428-51ed-4794-8efe-0113c63c6367',
     name: 'Vanessa Souto',
-    picture:
-      'https://cdn.discordapp.com/attachments/1243259954320642129/1243406585036800082/IMG_20220627_075056.jpg?ex=66515c1f&is=66500a9f&hm=88d0fb646ca8adf5011eebcd0a572eaa28ede91715ada566ff81438f78f6a963&',
+    picture: '/vanessa-souto.jpg',
     email: 'vanessasoutoc@gmail.com',
     role: 'Líder Backend',
     socials: [
@@ -228,8 +246,7 @@ export const volunteers: Volunteer[] = [
   {
     id: 'b056b4ce-2240-4e3b-a895-99a640632fd0',
     name: 'Daniel Rocha',
-    picture:
-      'https://media.discordapp.net/attachments/1243259954320642129/1243678091516051597/perfil.png?ex=665258fb&is=6651077b&hm=9e0222c7f61487a92f6061781a12026f78c3dd91085b413951f226ac99689800&=&format=webp&quality=lossless',
+    picture: '/daniel-rocha.png',
     role: 'Líder QA',
     socials: [
       {
@@ -343,8 +360,7 @@ export const volunteers: Volunteer[] = [
   {
     id: '47799317-0fb1-458c-a465-ddcdbe3b89c1',
     name: 'Luiz Bernardes',
-    picture:
-      'https://cdn.discordapp.com/attachments/1243259954320642129/1243683510192177224/Foto_Perfil.jpeg?ex=66525e07&is=66510c87&hm=f356513484e2781673e434113ac33131efaebaafddbf92e15f16e8458a76225b&',
+    picture: '/luiz-fernando.jpeg',
     role: 'Líder QA',
     socials: [
       {
