@@ -3,7 +3,6 @@ import { FileUpload } from '@/components/ui/file-upload'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormMessage,
@@ -165,7 +164,7 @@ export default function RegisterPetForm() {
           </h2>
 
           <div className="grid gap-4 lg:grid-cols-2">
-            <FormField
+            {/* <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
@@ -181,9 +180,9 @@ export default function RegisterPetForm() {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
 
-            <FormField
+            {/* <FormField
               control={form.control}
               name="age"
               render={({ field: { onChange, ...field }, fieldState }) => (
@@ -212,7 +211,7 @@ export default function RegisterPetForm() {
                   )}
                 </FormItem>
               )}
-            />
+            /> */}
 
             <FormField
               control={form.control}
@@ -226,7 +225,7 @@ export default function RegisterPetForm() {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecione a espécie" />
+                        <SelectValue placeholder="Opção 1" />
                       </SelectTrigger>
                     </FormControl>
 
@@ -258,11 +257,11 @@ export default function RegisterPetForm() {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecione a raça" />
+                        <SelectValue placeholder="Selecione a cor" />
                       </SelectTrigger>
                     </FormControl>
 
-                    <SelectContent>
+                    {/* <SelectContent>
                       {specifications.sizes.map((petSize) => (
                         <SelectItem
                           key={'petSize'.concat(petSize.value)}
@@ -271,7 +270,7 @@ export default function RegisterPetForm() {
                           {petSize.label}
                         </SelectItem>
                       ))}
-                    </SelectContent>
+                    </SelectContent> */}
                   </Select>
                   <FormMessage />
                 </FormItem>
@@ -322,7 +321,7 @@ export default function RegisterPetForm() {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecione a cor" />
+                        <SelectValue placeholder="Inserir imagens" />
                       </SelectTrigger>
                     </FormControl>
 
