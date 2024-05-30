@@ -78,8 +78,7 @@ export const volunteers: Volunteer[] = [
   {
     id: '11273f9a-4cbb-4353-9690-5607496eb02c',
     name: 'Yasmin Costa',
-    picture:
-      'https://cdn.discordapp.com/attachments/1243259954320642129/1243972560266465331/2258E497-3A04-4A52-BBCD-0712F5B6688A.jpg?ex=6654bcba&is=66536b3a&hm=f835ddf3cab7f27674bd28d3cb2eab3a2fab380dbcdcee5c407787df26b788d8&',
+    picture: 'https://avatars.githubusercontent.com/u/99223801?v=4',
     role: 'Líder Marketing',
     email: 'tiyasmin14@gmail.com',
     socials: [
@@ -159,6 +158,7 @@ export const volunteers: Volunteer[] = [
     id: 'f1bb122a-3c1f-4c86-9124-5a0e204efd19',
     name: 'Matheus Grossi',
     picture: 'https://github.com/matteothebrave.png',
+    email: 'matheusgrossi33@gmail.com',
     role: 'Líder Frontend',
     socials: [
       {

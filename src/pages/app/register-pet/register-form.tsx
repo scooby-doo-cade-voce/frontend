@@ -3,7 +3,6 @@ import { FileUpload } from '@/components/ui/file-upload'
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormMessage,
@@ -36,7 +35,7 @@ const ACCEPTED_IMAGE_TYPES = [
   'image/png',
   'image/webp',
 ]
-const IMAGE_UPLOAD_ENABLED = false
+const IMAGE_UPLOAD_ENABLED = true
 
 const schema = z.object({
   name: z.string(),
@@ -51,28 +50,23 @@ const schema = z.object({
   color: z.string().min(1, 'Raça é obrigatória'),
   pictures: z
     .array(z.any())
-    // .instanceof(FileList, {
-    //   message: 'Selecione uma imagem.',
-    // })
     .refine(
       (files) => (IMAGE_UPLOAD_ENABLED ? files?.length > 0 : true),
       'Selecione uma imagem.',
     )
     .refine((files) => {
-      if (files.length > 5) return false // Check if it's more than 5 files
+      if (files.length > 5) return false
       return true
     }, 'Selecione no máximo 5 imagens.')
     .refine((files) => {
       for (let i = 0; i < files.length; i++) {
-        if (files[i].type in ACCEPTED_IMAGE_TYPES) {
-          if (!ACCEPTED_IMAGE_TYPES.includes(files[i].type)) return false // Check if it's an accepted image type
-        }
+        if (!ACCEPTED_IMAGE_TYPES.includes(files[i].type)) return false
       }
       return true
     }, 'Selecione um formato de imagem válido.')
     .refine((files) => {
       for (let i = 0; i < files.length; i++) {
-        if (files[i].size > MAX_FILE_SIZE) return false // Check if size exceeds max size
+        if (files[i].size > MAX_FILE_SIZE) return false
       }
       return true
     }, 'Imagem muito grande.'),
@@ -137,7 +131,6 @@ export default function RegisterPetForm() {
           color_id: Number(values.color),
           responsible_id: responsibleResponse.data.id,
 
-          // Will only send if there's a race selected
           ...(values.race.length > 0 && {
             race_id: Number(values.race),
           }),
@@ -167,55 +160,6 @@ export default function RegisterPetForm() {
           <div className="grid gap-4 lg:grid-cols-2">
             <FormField
               control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem className="lg:col-span-2">
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="placeholder:text-muted-foreground/60"
-                      placeholder="Digite o nome do seu pet"
-                      disabled={isLoadingSpecifications}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="age"
-              render={({ field: { onChange, ...field }, fieldState }) => (
-                <FormItem className="lg:col-span-2">
-                  <FormControl>
-                    <Input
-                      {...field}
-                      className="placeholder:text-muted-foreground/60"
-                      placeholder="Selecione a idade do pet"
-                      type="number"
-                      min={1}
-                      step={1}
-                      disabled={isLoadingSpecifications}
-                      onChange={(event) => {
-                        onChange(Number(event.target.value))
-                      }}
-                    />
-                  </FormControl>
-                  {fieldState.error ? (
-                    <FormMessage />
-                  ) : (
-                    <FormDescription>
-                      Digite a idade do seu pet em anos, deixe 1 caso tenha
-                      menos de 1 ano ou não saiba a idade.
-                    </FormDescription>
-                  )}
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
               name="species"
               render={({ field }) => (
                 <FormItem>
@@ -226,7 +170,7 @@ export default function RegisterPetForm() {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecione a espécie" />
+                        <SelectValue placeholder="Opção 1" />
                       </SelectTrigger>
                     </FormControl>
 
@@ -258,7 +202,7 @@ export default function RegisterPetForm() {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecione a raça" />
+                        <SelectValue placeholder="Selecione a cor" />
                       </SelectTrigger>
                     </FormControl>
 
@@ -322,7 +266,7 @@ export default function RegisterPetForm() {
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Selecione a cor" />
+                        <SelectValue placeholder="Selecione o porte" />
                       </SelectTrigger>
                     </FormControl>
 
@@ -351,7 +295,7 @@ export default function RegisterPetForm() {
                     <Textarea
                       {...field}
                       className="h-32 placeholder:text-muted-foreground/60"
-                      placeholder="Digite uma descrição sobre o seu pet, como comportamento, saúde, etc. (mínimo 5 caracteres)"
+                      placeholder="Adicone uma descrição (opcional)"
                       disabled={isLoadingSpecifications}
                     />
                   </FormControl>
@@ -362,6 +306,36 @@ export default function RegisterPetForm() {
           </div>
         </div>
 
+        {IMAGE_UPLOAD_ENABLED && (
+          <div>
+            <h2 className="mb-3 text-center text-lg font-semibold text-primary lg:text-left lg:text-2xl">
+              Galeria de imagens
+            </h2>
+
+            <FormField
+              control={form.control}
+              name="pictures"
+              render={({ field, fieldState }) => (
+                <FormItem className="lg:col-span-2">
+                  <FormControl>
+                    <FileUpload
+                      id="pictures"
+                      onChange={field.onChange}
+                      maxFiles={5}
+                      multiple
+                      value={field.value}
+                      onError={(error) => {
+                        toast.error(error)
+                      }}
+                      error={fieldState.error?.message}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        )}
         <div>
           <h2 className="mb-3 text-center text-lg font-semibold text-primary lg:text-left lg:text-2xl">
             Informações do tutor
@@ -415,33 +389,6 @@ export default function RegisterPetForm() {
             />
           </div>
         </div>
-
-        {IMAGE_UPLOAD_ENABLED && (
-          <div>
-            <h2 className="mb-3 text-center text-lg font-semibold text-primary lg:text-left lg:text-2xl">
-              Galeria de imagens
-            </h2>
-
-            <FormField
-              control={form.control}
-              name="pictures"
-              render={({ field, fieldState }) => (
-                <FileUpload
-                  id="pictures"
-                  onChange={field.onChange}
-                  maxFiles={5}
-                  multiple
-                  value={field.value}
-                  onError={(error) => {
-                    toast.error(error)
-                  }}
-                  error={fieldState.error?.message}
-                />
-              )}
-            />
-          </div>
-        )}
-
         <Button
           className="flex w-full lg:max-w-64"
           type="submit"
