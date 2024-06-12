@@ -52,7 +52,7 @@ Para iniciá-lo, siga os passos abaixo:
 
 Instalar as dependências
 ```bash
-pnpm install
+npm install
 ```
 
 Crie um `.env` ou `.env.local` no seu projeto para que rode conectado com o backend
@@ -62,14 +62,14 @@ VITE_API_URL=http://localhost:3333 # ou a url do backend
 
 Iniciar o projeto
 ```bash
-pnpm dev
+npm run dev
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:5173.
 
 Lembrando que será necessário ter o [backend](https://github.com/scooby-doo-cade-voce/backend) rodando localmente para que o app funcione corretamente.
 
 ## Dicas
-- Utilize o comando `pnpm lint` para corrigir os erros de lint
+- Utilize o comando `npm run lint` para corrigir os erros de lint
 - Sempre verifique se seu commit foi efetuado com sucesso, utilizamos a ferramenta husky para que não deixe ser efetuado commits com erros de lint
 - Sempre verifique se seu push foi efetuado com sucesso, utilizamos a ferramenta husky para que não deixe ser efetuado pushs com erros de lint e build
 
