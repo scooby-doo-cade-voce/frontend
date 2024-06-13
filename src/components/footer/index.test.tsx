@@ -21,8 +21,6 @@ describe('AppFooter', () => {
       expect(linkElement).toBeInTheDocument()
       if (menu.href.startsWith('http')) {
         expect(linkElement.closest('a')).toHaveAttribute('href', menu.href)
-      } else {
-        expect(linkElement.closest('a')).toHaveAttribute('href', menu.href)
       }
     })
   })
