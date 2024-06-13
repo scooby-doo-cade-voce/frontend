@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/components/button/button'
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import HighFive from '../../../assets/imgs/highfive.webp'

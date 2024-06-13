@@ -1,6 +1,6 @@
 import { ChevronRight } from 'lucide-react'
 import { Paw } from '../paw'
-import { Button } from '../ui/button'
+import { Button } from '../ui/components/button/button'
 
 export function JoinUs() {
   return (

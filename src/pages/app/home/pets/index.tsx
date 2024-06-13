@@ -1,5 +1,5 @@
 import { Paw } from '@/components/paw'
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/components/button/button'
 import { useIsMobile } from '@/hooks/useIsMobile'
 import { ChevronRight } from 'lucide-react'
 import { lazy, Suspense } from 'react'

@@ -1,6 +1,6 @@
 import heroImg from '@/assets/imgs/hero.webp'
-import { Button } from '@/components/ui/button'
-import { ImageWithLoader } from '@/components/ui/image-with-loader'
+import { Button } from '@/components/ui/components/button/button'
+import { ImageWithLoader } from '@/components/ui/components/image-with-loader/image-with-loader'
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 

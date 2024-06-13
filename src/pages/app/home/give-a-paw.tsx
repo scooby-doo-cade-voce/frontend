@@ -4,7 +4,7 @@ import { cva, VariantProps } from 'class-variance-authority'
 import boyHuggingDogImg from '@/assets/imgs/boy-hugging-dog.webp'
 import girlHuggingCatImg from '@/assets/imgs/girl-hugging-cat.webp'
 import girlWithCatImg from '@/assets/imgs/girl-with-cat.webp'
-import { ImageWithLoader } from '@/components/ui/image-with-loader'
+import { ImageWithLoader } from '@/components/ui/components/image-with-loader/image-with-loader'
 
 const card = cva('p-6 lg:p-9 rounded-xl', {
   variants: {

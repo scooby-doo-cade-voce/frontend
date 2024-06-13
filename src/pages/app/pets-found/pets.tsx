@@ -1,19 +1,19 @@
 import { Paw } from '@/components/paw'
 import { PetCard } from '@/components/pet-card'
-import { Button } from '@/components/ui/button'
-import { ChevronRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import PurpleArrow from '../../../assets/imgs/purplearrow.webp'
+import { Button } from '@/components/ui/components/button/button'
 import {
   Animal,
-  animals as getAnimals,
-  search as animalsSearch,
   SearchParams,
+  search as animalsSearch,
+  animals as getAnimals,
 } from '@/services/animals'
-import { Size, sizes as getSizes } from '@/services/sizes'
 import { Color, colors as getColors } from '@/services/colors'
+import { Size, sizes as getSizes } from '@/services/sizes'
 import { Specie, species as getSpecies } from '@/services/species'
+import { ChevronRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import PurpleArrow from '../../../assets/imgs/purplearrow.webp'
 
 export function Pets() {
   const initialState: {

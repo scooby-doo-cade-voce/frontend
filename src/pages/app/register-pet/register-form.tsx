@@ -1,14 +1,15 @@
-import { Button } from '@/components/ui/button'
-import { FileUpload } from '@/components/ui/file-upload'
+import { Button } from '@/components/ui/components/button/button'
+import { FileUpload } from '@/components/ui/components/file-upload'
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { MaskedInput } from '@/components/ui/input-masked'
+} from '@/components/ui/components/form/form'
+import { Input } from '@/components/ui/components/input/input'
+import { MaskedInput } from '@/components/ui/components/input/input-masked'
+import { Textarea } from '@/components/ui/components/input/textarea'
 import {
   Select,
   SelectContent,
@@ -16,7 +17,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Textarea } from '@/components/ui/textarea'
 import { usePetsSpecifications } from '@/hooks/usePetsSpecifications'
 import { api } from '@/lib/axios'
 

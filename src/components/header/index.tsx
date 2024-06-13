@@ -9,7 +9,7 @@ import { Fragment, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import { Logo } from '../logo'
-import { Button } from '../ui/button'
+import { Button } from '../ui/components/button/button'
 
 const menus = [
   {
