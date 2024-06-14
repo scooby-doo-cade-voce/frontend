@@ -1,7 +1,7 @@
 import { InstagramIcon } from '@/components/icons/instagram.svg'
 import { LinkedInIcon } from '@/components/icons/linkedin.svg'
 import { XIcon } from '@/components/icons/x.svg'
-import { ImageWithLoader } from '@/components/ui/components/image-with-loader/image-with-loader'
+import { ImageWithLoader } from '@/components/ui/image-with-loader'
 import { Github } from 'lucide-react'
 import { JoinUs } from '../../../components/join-us'
 import { volunteers } from './items'

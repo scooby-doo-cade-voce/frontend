@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/components/button/button'
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import HighFive from '../../../assets/imgs/highfive.webp'
+import { Button } from '../../../components/ui/button'
 
 export function RegisterPet() {
   return (

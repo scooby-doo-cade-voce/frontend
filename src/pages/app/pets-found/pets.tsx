@@ -1,6 +1,6 @@
 import { Paw } from '@/components/paw'
 import { PetCard } from '@/components/pet-card'
-import { Button } from '@/components/ui/components/button/button'
+import { Button } from '@/components/ui/button'
 import {
   Animal,
   SearchParams,

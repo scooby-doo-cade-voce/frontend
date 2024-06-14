@@ -1,6 +1,6 @@
 import registerAPetImg from '@/assets/imgs/register-a-pet.webp'
 import { Paw } from '@/components/paw'
-import { ImageWithLoader } from '@/components/ui/components/image-with-loader/image-with-loader'
+import { ImageWithLoader } from '@/components/ui/image-with-loader'
 import { Fragment, lazy, Suspense } from 'react'
 import { Helmet } from 'react-helmet-async'
 

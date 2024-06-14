@@ -1,5 +1,5 @@
 import aboutUsImg from '@/assets/imgs/about-us.webp'
-import { ImageWithLoader } from '@/components/ui/components/image-with-loader/image-with-loader'
+import { ImageWithLoader } from '@/components/ui/image-with-loader'
 
 export function AboutUs() {
   return (

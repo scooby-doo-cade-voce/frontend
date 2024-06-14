@@ -5,10 +5,10 @@ import {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/components/dialog/dialog'
+} from '@/components/ui/dialog'
 import { ChevronRight, ZoomIn } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { Button } from '../ui/components/button/button'
+import { Button } from '../ui/button'
 
 interface PetCardProps {
   id: number

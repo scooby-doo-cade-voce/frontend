@@ -1,5 +1,5 @@
 import { Paw } from '@/components/paw'
-import { Button } from '@/components/ui/components/button/button'
+import { Button } from '@/components/ui/button'
 import { ChevronRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { Pets } from './pets'
